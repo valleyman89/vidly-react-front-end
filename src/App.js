@@ -7,6 +7,7 @@ import Customers from "./components/customers";
 import Rentals from "./components/rentals";
 import NotFound from "./components/notFound";
 import MovieForm from "./components/movieForm";
+
 function App() {
   return (
     <React.Fragment>
