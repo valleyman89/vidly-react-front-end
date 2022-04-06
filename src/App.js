@@ -11,6 +11,7 @@ import MovieForm from "./components/movieForm";
 function App() {
   return (
     <React.Fragment>
+      {/* call navbar component */}
       <Navbar />
       <main className="container-fluid">
         <Switch>
