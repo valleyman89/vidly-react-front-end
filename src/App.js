@@ -14,6 +14,7 @@ function App() {
       {/* call navbar component */}
       <Navbar />
       <main className="container-fluid">
+        {/* switch */}
         <Switch>
           <Route path="/movies/:id" component={MovieForm}></Route>
           <Route path="/movies" component={Movies}></Route>
