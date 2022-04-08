@@ -1,4 +1,3 @@
-import { map } from "lodash";
 import React, { Component } from "react";
 const Select = ({ name, label, options, error, ...rest }) => {
   return (
