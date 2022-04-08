@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import NotFound from "./components/notFound";
 import React from "react";
 import Rentals from "./components/rentals";
+import Register from "./components/registerForm";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Switch>
           <Route path="/movies/:id" component={MovieForm}></Route>
           <Route path="/login" component={LoginForm}></Route>
+          <Route path="/register" component={Register} />
           <Route path="/movies" component={Movies}></Route>
           <Route path="/customers" component={Customers}></Route>
           <Route path="/rentals" component={Rentals}></Route>
