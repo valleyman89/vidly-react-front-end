@@ -2,13 +2,17 @@ import React, { Component } from "react";
 import Form from "./common/form";
 import Joi from "joi-browser";
 
-class Register extends Form {
+class RegisterForm extends Form {
   state = { data: { username: "", password: "", name: "" }, errors: {} };
 
   schema = {
     username: Joi.string().email().required().label("username"),
     password: Joi.string().required().min(5).label("password"),
     name: Joi.string().required().label("name"),
+  };
+
+  doSubmit = () => {
+    console.log("RegisterForm submitted");
   };
 
   render() {
@@ -26,4 +30,4 @@ class Register extends Form {
   }
 }
 
-export default Register;
+export default RegisterForm;
