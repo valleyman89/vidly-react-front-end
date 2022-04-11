@@ -45,7 +45,7 @@ class Movies extends Component {
   };
 
   handleGenres = (genre) => {
-    console.log(genre);
+    //console.log(genre);
   };
 
   handleGenreSelect = (genre) => {
