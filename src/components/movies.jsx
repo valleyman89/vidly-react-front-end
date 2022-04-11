@@ -8,6 +8,7 @@ import MoviesTable from "./moviesTable";
 import Pagination from "./common/pagination";
 import React, { Component } from "react";
 import SearchBox from "./searchBox";
+import { toast } from "react-toastify";
 
 class Movies extends Component {
   state = {
@@ -35,8 +36,10 @@ class Movies extends Component {
     try {
       await deleteMovie(movie._id);
     } catch (ex) {
+      if (ex.response && ex.response.status === 401)
+        toast.error("You are not logged in.");
       if (ex.response && ex.response.status === 404)
-        console.log("movie has been deleted");
+        toast.error(`Movie ID ${movie._id} has already been deleted.`);
       this.setState({ movies: originalMovies });
     }
   };
