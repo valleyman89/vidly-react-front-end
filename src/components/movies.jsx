@@ -33,7 +33,6 @@ class Movies extends Component {
     const originalMovies = this.state.movies;
     const movies = originalMovies.filter((m) => m._id !== movie._id);
     this.setState({ movies });
-    toast(`Movie ID ${movie._id} deleted!`);
     try {
       await deleteMovie(movie._id);
     } catch (ex) {
