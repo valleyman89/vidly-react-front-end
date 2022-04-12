@@ -2,12 +2,7 @@ import http from "./http";
 import config from "../config.json";
 
 const apiEndpoint = config.apiUrl + "/movies/";
-const options = {
-  headers: {
-    "x-auth-token":
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRkYzk0YjI0Mzc3ZGFjNzkxZjFmNWUiLCJpYXQiOjE2NDkyNjU2MDB9.kzxxY0xLPQamPcafhKFdwxgxgGeBWHyLG4vpGMc7XBg",
-  },
-};
+const options = {};
 
 function movieUrl(id) {
   return `${apiEndpoint}/${id}`;
