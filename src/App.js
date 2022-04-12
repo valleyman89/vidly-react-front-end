@@ -13,6 +13,7 @@ import NotFound from "./components/notFound";
 import React, { Component } from "react";
 import RegisterForm from "./components/registerForm";
 import Rentals from "./components/rentals";
+import ProtectedRoute from "./components/common/protectedRoute";
 
 class App extends Component {
   state = {};
@@ -23,22 +24,23 @@ class App extends Component {
   }
 
   render() {
+    const { user } = this.state;
     return (
       <React.Fragment>
         <ToastContainer />
         {/* call navbar component */}
-        <Navbar user={this.state.user} />
+        <Navbar user={user} />
         <main className="container-fluid">
           {/* switch */}
           <Switch>
-            <Route path="/movies/:id" component={MovieForm}></Route>
             <Route path="/login" component={LoginForm}></Route>
             <Route path="/logout" component={Logout}></Route>
             <Route path="/register" component={RegisterForm} />
-            <Route path="/movies/new" component={MovieForm} />
+            <ProtectedRoute path="/movies/:id" component={MovieForm} />
+
             <Route
               path="/movies"
-              render={(props) => <Movies {...props} user={this.state.user} />}
+              render={(props) => <Movies {...props} user={user} />}
             />
             <Route path="/customers" component={Customers}></Route>
             <Route path="/rentals" component={Rentals}></Route>
