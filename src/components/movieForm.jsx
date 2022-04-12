@@ -3,7 +3,7 @@ import { getMovie, saveMovie } from "../services/movieService";
 import Form from "./common/form";
 import Joi from "joi-browser";
 import React, { Component } from "react";
-
+import { toast } from "react-toastify";
 class MovieForm extends Form {
   state = {
     data: { title: "", genreId: "", numberInStock: "", dailyRentalRate: "" },
@@ -60,6 +60,7 @@ class MovieForm extends Form {
 
   doSubmit = async () => {
     await saveMovie(this.state.data);
+    toast(`Movie saved!`);
     this.props.history.push("/movies");
   };
 
