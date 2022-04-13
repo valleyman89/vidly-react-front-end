@@ -1,6 +1,5 @@
 import axios from "axios";
 import { toast } from "react-toastify";
-require("dotenv").config();
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
