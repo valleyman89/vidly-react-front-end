@@ -1,7 +1,6 @@
 import http from "./http";
-import config from "../config.json";
 
-const apiEndpoint = config.apiUrl + "/movies/";
+const apiEndpoint = "/movies/";
 const options = {};
 
 function movieUrl(id) {
